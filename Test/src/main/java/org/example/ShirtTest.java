@@ -4,6 +4,7 @@ public class ShirtTest {
     public static void main(String[] args) {
         Shirt cs=new Shirt();
 
+        //class members been set with values through setters
         cs.setFiberName("cotton");
         cs.setFiberWeight((short) 189);
         cs.setFiberUOM("Kilograms");
@@ -22,8 +23,10 @@ public class ShirtTest {
         cs.setNo_of_Products((short) 50);
         cs.setProductUOM("Pieces");
 
+        //supply chain management system called
         cs.SCM(cs);
 
+        //class members intialized using members
         cs.fiberName="polyester";
         cs.fiberWeight=123;
         cs.fiberUOM="Kilograms";

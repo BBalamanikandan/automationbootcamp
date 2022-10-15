@@ -2,6 +2,8 @@ package org.example;
 
 public class Shirt {
 
+    //sample class to record its member data and behaviors using getters/setters
+
     String fiberName,fiberUOM,yarnUOM,fabricUOM,productName,productUOM,colorName,articleType,seasonName,materialComposition;
     short fiberWeight,yarnBundle,yarnWastage,fabricLength,fabricWastage,No_of_Raw_Materials,No_of_Products;
 
