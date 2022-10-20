@@ -29,19 +29,20 @@ public class SupplierActiveFacilities {
             List<WebElement> supNames = wb.findElements(By.xpath("//*[@class='supplier-title']/a"));
 
             if(sup_count==supNames.size()) {
-                for (int i = 0; i <sup_count; i++) {
+               //for (int i = 0; i <sup_count; i++) {
+                    System.out.println("\n-------------------------$$$$$$$$$$$$$$$$$----------------------");
                     Thread.sleep(3000);
 
-                    String supCompanyName = wb.findElement(By.xpath("(//*[@class='supplier-title']/a)["+(i+1)+"]")).getText();
+                    String supCompanyName = wb.findElement(By.xpath("(//*[@class='supplier-title']/a)["+1+"]")).getText();
                     wb.findElement(By.xpath("//*[@type='text']")).sendKeys(supCompanyName + Keys.ENTER);
                     Thread.sleep(3000);
-                    String sup_Company_Name =wb.findElement(By.xpath("(//*[@class='supplier-title']/a)["+(i+1)+"]")).getText();
+                    String sup_Company_Name =wb.findElement(By.xpath("(//*[@class='supplier-title']/a)["+1+"]")).getText();
 
 
                     if (sup_Company_Name.trim().equals(supCompanyName)) {
                         short facCount = Short.parseShort(wb.findElement(By.xpath("//*[contains(text(),'Facilities')]/span")).getText());
-                        System.out.println("Supplier Code : " + supCompanyName + "\nAssociated Facilities Shown in supplier's card view is " + facCount);
-                        wb.findElement(By.xpath("(//*[@class='supplier-title']/a)["+(i+1)+"]")).click();
+                        System.out.println("Supplier's Company Name : " + supCompanyName + "\nAssociated Facilities Shown in supplier's card view is " + facCount);
+                        wb.findElement(By.xpath("(//*[@class='supplier-title']/a)["+1+"]")).click();
                         Thread.sleep(3000);
                         String facCnt = wb.findElement(By.xpath("//span[contains(text(),'FAC')]")).getText();
                         //System.out.println("facilities text inside profile view: "+facCnt);
@@ -55,7 +56,7 @@ public class SupplierActiveFacilities {
                             System.out.println("Number Facilities Association Mismatched!!!\nCard View: " + facCnt + "\nProfile View:" + facCount2);
 
                     } else {
-                        System.out.println("Vendor code mismatched btw card view and profile view...\n" + supCompanyName + "\n" + wb.findElement(By.xpath("(//*[@class='supplier-title']/a)["+(i+1)+"]")).getText());
+                        System.out.println("supplier company name mismatched btw card view and profile view...\n" + supCompanyName + "\n" + wb.findElement(By.xpath("(//*[@class='supplier-title']/a)["+1+"]")).getText());
                     }
                     wb.findElement(By.xpath("//*[contains(text(),'Back')]")).click();
                     Thread.sleep(3000);
@@ -63,12 +64,12 @@ public class SupplierActiveFacilities {
                     Thread.sleep(3000);
                     wb.findElement(By.xpath("//*[contains(text(),'Reset')]")).click();
                     Thread.sleep(3000);
-                }
+              //  }
             }else{
                 System.out.println("Total number suppliers count and elements count doesn't match\nUI count:"+sup_count+"\tElements Count:"+supNames.size());
             }
         }catch (Exception e){
-             System.out.println("Exception Raised : "+e.getMessage());
+             System.out.println("Exception Raised : "+e);
         }finally {
             wb.quit();
             wb=null;
