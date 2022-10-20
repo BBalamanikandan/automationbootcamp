@@ -1,7 +1,9 @@
-package org.example;
+package org.sample.java;
+
+import java.io.UnsupportedEncodingException;
 
 public class DataTypesOperatorsAndManipulations {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws UnsupportedEncodingException {
 
         //different types of data...
         short a=1000;
@@ -60,6 +62,36 @@ public class DataTypesOperatorsAndManipulations {
         System.out.println(a+" is equals to "+b+" : "+(a==b));
         System.out.println(a+" AND "+b+" : "+(a&b));
         System.out.println(a+" OR "+b+" : "+(a|b));
-        System.out.println(a>b?a:b);
+        System.out.println(a+" > "+b+" : "+(a>b?a:b));
+
+        System.out.println("\n\n String manipulations...");
+        System.out.println(g+" in lower case "+g.toLowerCase());
+        System.out.println(g+" in upper case "+g.toUpperCase());
+        System.out.println(g+" to string "+g.toString());
+        System.out.println(g+" concat of \"java\" "+g.concat("java"));
+        System.out.println(g+" indent 2 "+g.indent(2));
+        System.out.println(g+" replaced as "+g.replace("welcome","hello"));
+        System.out.println(g+" substring(2,5) "+g.substring(2,5));
+        System.out.println(g+" charAt(3) "+g.charAt(3));
+        System.out.println(g+" contains \"come\" "+(g.contains("come")?"Yes":"No"));
+        System.out.println(g+" index of \"com\" "+g.indexOf("com"));
+        System.out.println(g+" index of \'l\' "+g.indexOf('l'));
+        System.out.println(g+" is blank: "+g.isBlank());
+        System.out.println(g+" in empty: "+g.isEmpty());
+        System.out.println(g+" compared to \"WELCOME\" "+(g.compareTo("WELCOME")==0?"Equal":(g.compareTo("WELCOME")>0)?"WELCOME":g));
+        System.out.println(g+" compared to ignore case \"WELCOME\" "+(g.compareToIgnoreCase("WELCOME")==0?"Equal":(g.compareToIgnoreCase("WELCOME")>0)?"WELCOME":g));
+        System.out.println(g+" last index of \'e\' "+g.lastIndexOf('e'));
+        System.out.println(g+" index of \'e\' "+g.indexOf('e'));
+        System.out.println(g+" length "+g.length());
+
+        System.out.println(g+" char array as follows...");
+        for (char x:g.toCharArray()) {
+            System.out.println(x);
+        }
+
+        System.out.println(g+" starts with \'e\' : "+g.startsWith("e"));
+        System.out.println(g+" ends with \'e\' : "+g.endsWith("e"));
+
+
     }
 }

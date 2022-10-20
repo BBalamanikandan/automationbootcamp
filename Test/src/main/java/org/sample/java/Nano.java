@@ -1,4 +1,4 @@
-package org.example;
+package org.sample.java;
 
 public class Nano implements Drive,Prevention {
 

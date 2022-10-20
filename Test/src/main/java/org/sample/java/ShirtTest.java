@@ -1,4 +1,4 @@
-package org.example;
+package org.sample.java;
 
 public class ShirtTest {
     public static void main(String[] args) {
