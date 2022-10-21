@@ -26,7 +26,7 @@ public class ShirtTest {
         //supply chain management system called
         cs.SCM(cs);
 
-        //class members intialized using members
+        //class members initialized using members
         cs.fiberName="polyester";
         cs.fiberWeight=123;
         cs.fiberUOM="Kilograms";

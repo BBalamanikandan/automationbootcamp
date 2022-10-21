@@ -1,9 +1,7 @@
 package org.sample.java;
 
-import java.io.UnsupportedEncodingException;
-
 public class DataTypesOperatorsAndManipulations {
-    public static void main(String[] args) throws UnsupportedEncodingException {
+    public static void main(String[] args) {
 
         //different types of data...
         short a=1000;
@@ -29,13 +27,14 @@ public class DataTypesOperatorsAndManipulations {
 
         x1= Integer.valueOf(y1);
         System.out.println("\nInteger value of "+y1+" is "+x1);
+        System.out.println(a1.floatValue()+"\n"+z1.doubleValue());
 
         System.out.println(y1+"'s byte value is "+y1.byteValue());
         System.out.println(y1+"'s hash code is "+y1.hashCode());
         System.out.println(y1+"'s double value is "+y1.doubleValue());
         System.out.println(y1+"'s float value is "+y1.floatValue());
         System.out.println(y1+"'s int value is "+y1.intValue());
-        System.out.println(y1+"'s string value is "+y1.toString());
+        System.out.println(y1+"'s string value is "+y1);
         System.out.println(y1+" and "+x1+" are "+(y1.equals(x1)?"equals to each other":"not equals to each other"));
         System.out.println(y1+" belongs to  "+y1.getClass());
 
@@ -67,7 +66,7 @@ public class DataTypesOperatorsAndManipulations {
         System.out.println("\n\n String manipulations...");
         System.out.println(g+" in lower case "+g.toLowerCase());
         System.out.println(g+" in upper case "+g.toUpperCase());
-        System.out.println(g+" to string "+g.toString());
+        System.out.println(g+" to string "+g);
         System.out.println(g+" concat of \"java\" "+g.concat("java"));
         System.out.println(g+" indent 2 "+g.indent(2));
         System.out.println(g+" replaced as "+g.replace("welcome","hello"));
@@ -75,13 +74,13 @@ public class DataTypesOperatorsAndManipulations {
         System.out.println(g+" charAt(3) "+g.charAt(3));
         System.out.println(g+" contains \"come\" "+(g.contains("come")?"Yes":"No"));
         System.out.println(g+" index of \"com\" "+g.indexOf("com"));
-        System.out.println(g+" index of \'l\' "+g.indexOf('l'));
+        System.out.println(g+" index of 'l' "+g.indexOf('l'));
         System.out.println(g+" is blank: "+g.isBlank());
         System.out.println(g+" in empty: "+g.isEmpty());
         System.out.println(g+" compared to \"WELCOME\" "+(g.compareTo("WELCOME")==0?"Equal":(g.compareTo("WELCOME")>0)?"WELCOME":g));
         System.out.println(g+" compared to ignore case \"WELCOME\" "+(g.compareToIgnoreCase("WELCOME")==0?"Equal":(g.compareToIgnoreCase("WELCOME")>0)?"WELCOME":g));
-        System.out.println(g+" last index of \'e\' "+g.lastIndexOf('e'));
-        System.out.println(g+" index of \'e\' "+g.indexOf('e'));
+        System.out.println(g+" last index of 'e' "+g.lastIndexOf('e'));
+        System.out.println(g+" index of 'e' "+g.indexOf('e'));
         System.out.println(g+" length "+g.length());
 
         System.out.println(g+" char array as follows...");
@@ -89,8 +88,8 @@ public class DataTypesOperatorsAndManipulations {
             System.out.println(x);
         }
 
-        System.out.println(g+" starts with \'e\' : "+g.startsWith("e"));
-        System.out.println(g+" ends with \'e\' : "+g.endsWith("e"));
+        System.out.println(g+" starts with 'e' : "+g.startsWith("e"));
+        System.out.println(g+" ends with 'e' : "+g.endsWith("e"));
 
 
     }

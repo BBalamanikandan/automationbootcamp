@@ -9,7 +9,7 @@ public class Nano implements Drive,Prevention {
     }
     public void drive() {
         System.out.println("Nano car only supports manual drive mode");
-    } //nano follows the prototype of drive interface hence as a mandate rule impleted its method.
+    } //nano follows the prototype of drive interface hence as a mandate rule implemented its method.
 
     public void protect() {} //though nano follows the prevention prototype doesn't support this feature in the car hence empty definition required as prevention interface implemented.
 
