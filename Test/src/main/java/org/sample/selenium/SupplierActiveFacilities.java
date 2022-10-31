@@ -2,13 +2,15 @@ package org.sample.selenium;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.*;
-import org.openqa.selenium.chrome.*;
-
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Scanner;
 
 public class SupplierActiveFacilities {
     static WebDriver wb;
@@ -21,11 +23,35 @@ public class SupplierActiveFacilities {
     static void waitM(long x) throws InterruptedException {
         Thread.sleep(x);
     }
+    public static WebDriver initBrw(String brwNa) {
+        WebDriver webDrv = null;
+        switch (brwNa) {
+            case "Chrome" -> {
+                WebDriverManager.chromedriver().setup();
+                webDrv = new ChromeDriver();
+            }
+            case "Edge" -> {
+                WebDriverManager.edgedriver().setup();
+                webDrv = new EdgeDriver();
+            }
+            case "Firefox" -> {
+                WebDriverManager.firefoxdriver().setup();
+                webDrv = new FirefoxDriver();
+            }
+            default -> System.out.println("Unsupported Browser!!!");
+        }
+        return webDrv;
+    }
+
     public static void main(String[] args) {
+
+
+
         try {
+            System.out.println("Which Browser You Wants to Execute? [Chrome/Edge/Firefox]");
+            String brwName=new Scanner(System.in).nextLine();
             start=LocalTime.now();
-            WebDriverManager.chromedriver().setup();
-            wb = new ChromeDriver();
+            wb=initBrw(brwName);
             wb.manage().window().maximize();
             wb.navigate().to("https://adidas.trustrace.biz");
             wb.findElement(By.xpath("//*[@type='email']")).sendKeys("ttuser@uatadidasgroup.com");
@@ -44,7 +70,7 @@ public class SupplierActiveFacilities {
 
             if(sup_count==supNames.size()) {
                for (int i = 0; i <sup_count; i++) {
-                    System.out.println("\n-------------------------$$$$$$$$$$$$$$$$$----------------------");
+                    System.out.println("\n-------------------------$$$$$$$$["+(i+1)+"]$$$$$$$----------------------");
                    waitM(1000);
 
                     String supCompanyName = wb.findElement(By.xpath("(//*[@class='supplier-title']/a)["+(i+1)+"]")).getText();
