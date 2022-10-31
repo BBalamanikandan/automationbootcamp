@@ -83,8 +83,7 @@ public class SupplierActiveFacilities {
                     waitM(1000);
                }
 
-                wb.quit();
-                wb=null;
+
                 end=LocalTime.now();
                 System.out.println("\n\n-----------------------$$----------------------\nExecution started at "+start);
                 System.out.println("Execution completed at "+end);
@@ -100,6 +99,9 @@ public class SupplierActiveFacilities {
             }
         }catch (Exception e) {
             System.out.println("Exception Raised : " + e);
+        }finally {
+            wb.quit();
+            wb=null;
         }
     }
 
