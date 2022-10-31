@@ -26,15 +26,15 @@ public class SupplierActiveFacilities {
     public static WebDriver initBrw(String brwNa) {
         WebDriver webDrv = null;
         switch (brwNa) {
-            case "Chrome" -> {
+            case "chrome" -> {
                 WebDriverManager.chromedriver().setup();
                 webDrv = new ChromeDriver();
             }
-            case "Edge" -> {
+            case "edge" -> {
                 WebDriverManager.edgedriver().setup();
                 webDrv = new EdgeDriver();
             }
-            case "Firefox" -> {
+            case "firefox" -> {
                 WebDriverManager.firefoxdriver().setup();
                 webDrv = new FirefoxDriver();
             }
@@ -49,7 +49,7 @@ public class SupplierActiveFacilities {
 
         try {
             System.out.println("Which Browser You Wants to Execute? [Chrome/Edge/Firefox]");
-            String brwName=new Scanner(System.in).nextLine();
+            String brwName=new Scanner(System.in).nextLine().toLowerCase();
             start=LocalTime.now();
             wb=initBrw(brwName);
             wb.manage().window().maximize();
